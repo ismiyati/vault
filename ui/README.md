@@ -8,6 +8,7 @@
     - [Code Generators](#code-generators)
     - [Running Tests](#running-tests)
       - [Automated Cross-Browser Testing](#automated-cross-browser-testing)
+        - [Running Browserstack Locally](#running-browserstack-locally)
     - [Linting](#linting)
     - [Building Vault UI into a Vault Binary](#building-vault-ui-into-a-vault-binary)
   - [Vault Storybook](#vault-storybook)
@@ -77,6 +78,10 @@ acceptance tests then run, proxing requests back to that server.
 #### Automated Cross-Browser Testing
 
 Vault uses [Browserstack Automate](https://automate.browserstack.com/) to run all of the OSS acceptance tests on various browsers. You can view the list of browsers we test by viewing `testem.browserstack.js`. 
+
+##### Running Browserstack Locally
+
+To run the Browserstack tests locally you will need to add your `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` to your environment. Then run `yarn run test:browserstack`. You can view the currently running tests at `localhost:7357` or log in to [Browserstack Automate](https://automate.browserstack.com/) to view a previous build.
 
 ### Linting
 
