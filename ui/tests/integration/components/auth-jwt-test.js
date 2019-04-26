@@ -177,7 +177,7 @@ module('Integration | Component | auth jwt', function(hooks) {
 
     later(async () => {
       run.cancelTimers();
-    }, 50);
+    }, WAIT_TIME);
     await settled();
 
     let call = this.window.open.getCall(0);
@@ -196,7 +196,7 @@ module('Integration | Component | auth jwt', function(hooks) {
 
     later(async () => {
       this.window.close();
-    }, 50);
+    }, WAIT_TIME);
     await settled();
     assert.equal(this.error, ERROR_WINDOW_CLOSED, 'calls onError with error string');
   });
@@ -210,7 +210,7 @@ module('Integration | Component | auth jwt', function(hooks) {
       run.cancelTimers();
       this.window.trigger('storage', { key: 'wrongThing' });
       assert.equal(this.window.localStorage.removeItem.callCount, 0, 'never calls removeItem');
-    }, 50);
+    }, WAIT_TIME);
     await settled();
   });
 
@@ -224,7 +224,7 @@ module('Integration | Component | auth jwt', function(hooks) {
       await settled();
       assert.equal(this.window.localStorage.removeItem.callCount, 1, 'calls removeItem');
       assert.equal(this.error, ERROR_MISSING_PARAMS, 'calls onError with params missing error');
-    }, 50);
+    }, WAIT_TIME);
     await settled();
   });
 
@@ -246,7 +246,7 @@ module('Integration | Component | auth jwt', function(hooks) {
       assert.equal(this.selectedAuth, 'token', 'calls onSelectedAuth with token');
       assert.equal(this.token, 'token', 'calls onToken with token');
       assert.ok(this.handler.calledOnce, 'calls the onSubmit handler');
-    }, 50);
+    }, WAIT_TIME);
     await settled();
   });
 });
