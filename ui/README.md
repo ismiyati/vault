@@ -81,7 +81,9 @@ Vault uses [Browserstack Automate](https://automate.browserstack.com/) to run al
 
 ##### Running Browserstack Locally
 
-To run the Browserstack tests locally you will need to add your `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` to your environment. Then run `yarn run test:browserstack`. You can view the currently running tests at `localhost:7357` or log in to [Browserstack Automate](https://automate.browserstack.com/) to view a previous build.
+To run the Browserstack tests locally you will need to add your `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` to your environment. Then run `yarn run test:browserstack`. You can view the currently running tests at `localhost:7357` or log in to [Browserstack Automate](https://automate.browserstack.com/) to view a previous build. 
+
+To run the tests locally in a browser other than IE11, swap out `launch_in_ci: ['BS_IE_11']` inside `testem.browserstack.js`.
 
 ### Linting
 
