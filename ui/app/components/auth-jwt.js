@@ -141,7 +141,7 @@ export default Component.extend({
     this.onSelectedAuth('token');
     this.onToken(token);
     yield this.onSubmit();
-  }).withTestWaiter(),
+  }),
 
   actions: {
     async startOIDCAuth(data, e) {
