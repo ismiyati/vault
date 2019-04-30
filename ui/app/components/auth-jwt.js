@@ -68,9 +68,7 @@ export default Component.extend({
       }
     }
     this.set('role', role);
-  })
-    .restartable()
-    .withTestWaiter(),
+  }).restartable(),
 
   handleOIDCError(err) {
     this.onLoading(false);
