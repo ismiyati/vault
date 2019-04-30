@@ -16,9 +16,8 @@ function run(command, args = []) {
 }
 
 (async function() {
-  await run('ember', ['browserstack:connect']);
-
   try {
+    await run('ember', ['browserstack:connect']);
     try {
       await run('ember', ['test', '-f=!enterprise', '-c', 'testem.browserstack.js']);
 
